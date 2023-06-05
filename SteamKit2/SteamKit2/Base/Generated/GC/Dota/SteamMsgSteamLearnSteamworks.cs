@@ -615,6 +615,187 @@ namespace SteamKit2.GC.Dota.Internal
     }
 
     [global::ProtoBuf.ProtoContract()]
+    public partial class CMsgSteamLearn_Inference_Request : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        [global::System.ComponentModel.DefaultValue("")]
+        public string access_token
+        {
+            get => __pbn__access_token ?? "";
+            set => __pbn__access_token = value;
+        }
+        public bool ShouldSerializeaccess_token() => __pbn__access_token != null;
+        public void Resetaccess_token() => __pbn__access_token = null;
+        private string __pbn__access_token;
+
+        [global::ProtoBuf.ProtoMember(2)]
+        public CMsgSteamLearn_AccessData access_data { get; set; }
+
+        [global::ProtoBuf.ProtoMember(3)]
+        public uint project_id
+        {
+            get => __pbn__project_id.GetValueOrDefault();
+            set => __pbn__project_id = value;
+        }
+        public bool ShouldSerializeproject_id() => __pbn__project_id != null;
+        public void Resetproject_id() => __pbn__project_id = null;
+        private uint? __pbn__project_id;
+
+        [global::ProtoBuf.ProtoMember(4)]
+        public uint published_version
+        {
+            get => __pbn__published_version.GetValueOrDefault();
+            set => __pbn__published_version = value;
+        }
+        public bool ShouldSerializepublished_version() => __pbn__published_version != null;
+        public void Resetpublished_version() => __pbn__published_version = null;
+        private uint? __pbn__published_version;
+
+        [global::ProtoBuf.ProtoMember(5)]
+        public uint override_train_id
+        {
+            get => __pbn__override_train_id.GetValueOrDefault();
+            set => __pbn__override_train_id = value;
+        }
+        public bool ShouldSerializeoverride_train_id() => __pbn__override_train_id != null;
+        public void Resetoverride_train_id() => __pbn__override_train_id = null;
+        private uint? __pbn__override_train_id;
+
+        [global::ProtoBuf.ProtoMember(6)]
+        public CMsgSteamLearnDataList data { get; set; }
+
+        [global::ProtoBuf.ProtoMember(7)]
+        public global::System.Collections.Generic.List<float> additional_data { get; } = new global::System.Collections.Generic.List<float>();
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class CMsgSteamLearn_InferenceBackend_Response : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        public global::System.Collections.Generic.List<Output> outputs { get; } = new global::System.Collections.Generic.List<Output>();
+
+        [global::ProtoBuf.ProtoContract()]
+        public partial class BinaryCrossEntropyOutput : global::ProtoBuf.IExtensible
+        {
+            private global::ProtoBuf.IExtension __pbn__extensionData;
+            global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+            [global::ProtoBuf.ProtoMember(1)]
+            public float value
+            {
+                get => __pbn__value.GetValueOrDefault();
+                set => __pbn__value = value;
+            }
+            public bool ShouldSerializevalue() => __pbn__value != null;
+            public void Resetvalue() => __pbn__value = null;
+            private float? __pbn__value;
+
+        }
+
+        [global::ProtoBuf.ProtoContract()]
+        public partial class MutliBinaryCrossEntropyOutput : global::ProtoBuf.IExtensible
+        {
+            private global::ProtoBuf.IExtension __pbn__extensionData;
+            global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+            [global::ProtoBuf.ProtoMember(1)]
+            public global::System.Collections.Generic.List<float> weight { get; } = new global::System.Collections.Generic.List<float>();
+
+            [global::ProtoBuf.ProtoMember(2)]
+            public global::System.Collections.Generic.List<float> value { get; } = new global::System.Collections.Generic.List<float>();
+
+        }
+
+        [global::ProtoBuf.ProtoContract()]
+        public partial class CategoricalCrossEntropyOutput : global::ProtoBuf.IExtensible
+        {
+            private global::ProtoBuf.IExtension __pbn__extensionData;
+            global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+            [global::ProtoBuf.ProtoMember(1)]
+            public global::System.Collections.Generic.List<float> weight { get; } = new global::System.Collections.Generic.List<float>();
+
+            [global::ProtoBuf.ProtoMember(2)]
+            public global::System.Collections.Generic.List<float> value { get; } = new global::System.Collections.Generic.List<float>();
+
+        }
+
+        [global::ProtoBuf.ProtoContract()]
+        public partial class Output : global::ProtoBuf.IExtensible
+        {
+            private global::ProtoBuf.IExtension __pbn__extensionData;
+            global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+            [global::ProtoBuf.ProtoMember(1)]
+            public CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutput binary_crossentropy
+            {
+                get => __pbn__ResponseType.Is(1) ? ((CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutput)__pbn__ResponseType.Object) : default(CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutput);
+                set => __pbn__ResponseType = new global::ProtoBuf.DiscriminatedUnionObject(1, value);
+            }
+            public bool ShouldSerializebinary_crossentropy() => __pbn__ResponseType.Is(1);
+            public void Resetbinary_crossentropy() => global::ProtoBuf.DiscriminatedUnionObject.Reset(ref __pbn__ResponseType, 1);
+
+            private global::ProtoBuf.DiscriminatedUnionObject __pbn__ResponseType;
+
+            [global::ProtoBuf.ProtoMember(2)]
+            public CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput categorical_crossentropy
+            {
+                get => __pbn__ResponseType.Is(2) ? ((CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput)__pbn__ResponseType.Object) : default(CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutput);
+                set => __pbn__ResponseType = new global::ProtoBuf.DiscriminatedUnionObject(2, value);
+            }
+            public bool ShouldSerializecategorical_crossentropy() => __pbn__ResponseType.Is(2);
+            public void Resetcategorical_crossentropy() => global::ProtoBuf.DiscriminatedUnionObject.Reset(ref __pbn__ResponseType, 2);
+
+            [global::ProtoBuf.ProtoMember(3)]
+            public CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput multi_binary_crossentropy
+            {
+                get => __pbn__ResponseType.Is(3) ? ((CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput)__pbn__ResponseType.Object) : default(CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutput);
+                set => __pbn__ResponseType = new global::ProtoBuf.DiscriminatedUnionObject(3, value);
+            }
+            public bool ShouldSerializemulti_binary_crossentropy() => __pbn__ResponseType.Is(3);
+            public void Resetmulti_binary_crossentropy() => global::ProtoBuf.DiscriminatedUnionObject.Reset(ref __pbn__ResponseType, 3);
+
+        }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class CMsgSteamLearn_Inference_Response : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        [global::System.ComponentModel.DefaultValue(ESteamLearnInferenceResult.STEAMLEARN_INFERENCE_ERROR)]
+        public ESteamLearnInferenceResult inference_result
+        {
+            get => __pbn__inference_result ?? ESteamLearnInferenceResult.STEAMLEARN_INFERENCE_ERROR;
+            set => __pbn__inference_result = value;
+        }
+        public bool ShouldSerializeinference_result() => __pbn__inference_result != null;
+        public void Resetinference_result() => __pbn__inference_result = null;
+        private ESteamLearnInferenceResult? __pbn__inference_result;
+
+        [global::ProtoBuf.ProtoMember(2)]
+        public CMsgSteamLearn_InferenceBackend_Response backend_response { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
     public enum ESteamLearnDataType
     {
         STEAMLEARN_DATATYPE_INVALID = 0,
@@ -678,6 +859,20 @@ namespace SteamKit2.GC.Dota.Internal
         STEAMLEARN_GET_HMAC_KEYS_SUCCESS = 0,
     }
 
+    [global::ProtoBuf.ProtoContract()]
+    public enum ESteamLearnInferenceResult
+    {
+        STEAMLEARN_INFERENCE_ERROR = 0,
+        STEAMLEARN_INFERENCE_SUCCESS = 1,
+        STEAMLEARN_INFERENCE_ERROR_INVALID_PROJECT_ID = 2,
+        STEAMLEARN_INFERENCE_ERROR_MISSING_CACHED_SCHEMA_DATA = 3,
+        STEAMLEARN_INFERENCE_ERROR_NO_PUBLISHED_CONFIG = 4,
+        STEAMLEARN_INFERENCE_ERROR_FORBIDDEN = 5,
+        STEAMLEARN_INFERENCE_ERROR_INVALID_TIMESTAMP = 6,
+        STEAMLEARN_INFERENCE_ERROR_INVALID_PUBLISHED_VERSION = 7,
+        STEAMLEARN_INFERENCE_ERROR_NO_FETCH_ID_FOUND = 8,
+    }
+
     public interface ISteamLearn
     {
         CMsgSteamLearn_RegisterDataSource_Response RegisterDataSource(CMsgSteamLearn_RegisterDataSource_Request request);
@@ -685,6 +880,7 @@ namespace SteamKit2.GC.Dota.Internal
         CMsgSteamLearn_SnapshotProject_Response SnapshotProject(CMsgSteamLearn_SnapshotProject_Request request);
         CMsgSteamLearn_BatchOperation_Response BatchOperation(CMsgSteamLearn_BatchOperation_Request request);
         CMsgSteamLearn_GetHMACKeys_Response GetHMACKeys(CMsgSteamLearn_GetHMACKeys_Request request);
+        CMsgSteamLearn_Inference_Response Inference(CMsgSteamLearn_Inference_Request request);
     }
 
 }

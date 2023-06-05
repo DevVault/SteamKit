@@ -246,26 +246,6 @@ namespace SteamKit2.GC.Dota.Internal
         public void Resetlow_priority_games_remaining() => __pbn__low_priority_games_remaining = null;
         private uint? __pbn__low_priority_games_remaining;
 
-        [global::ProtoBuf.ProtoMember(49)]
-        public uint competitive_rank
-        {
-            get => __pbn__competitive_rank.GetValueOrDefault();
-            set => __pbn__competitive_rank = value;
-        }
-        public bool ShouldSerializecompetitive_rank() => __pbn__competitive_rank != null;
-        public void Resetcompetitive_rank() => __pbn__competitive_rank = null;
-        private uint? __pbn__competitive_rank;
-
-        [global::ProtoBuf.ProtoMember(51)]
-        public uint competitive_calibration_games_remaining
-        {
-            get => __pbn__competitive_calibration_games_remaining.GetValueOrDefault();
-            set => __pbn__competitive_calibration_games_remaining = value;
-        }
-        public bool ShouldSerializecompetitive_calibration_games_remaining() => __pbn__competitive_calibration_games_remaining != null;
-        public void Resetcompetitive_calibration_games_remaining() => __pbn__competitive_calibration_games_remaining = null;
-        private uint? __pbn__competitive_calibration_games_remaining;
-
         [global::ProtoBuf.ProtoMember(55)]
         public uint recruitment_level
         {
@@ -989,6 +969,36 @@ namespace SteamKit2.GC.Dota.Internal
     }
 
     [global::ProtoBuf.ProtoContract()]
+    public partial class CMatchPlayerTimedCustomStat : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(2)]
+        [global::System.ComponentModel.DefaultValue(EDOTAMatchPlayerTimeCustomStat.k_EDOTA_MatchPlayerTimeCustomStat_HPRegenUnderT1Towers)]
+        public EDOTAMatchPlayerTimeCustomStat stat
+        {
+            get => __pbn__stat ?? EDOTAMatchPlayerTimeCustomStat.k_EDOTA_MatchPlayerTimeCustomStat_HPRegenUnderT1Towers;
+            set => __pbn__stat = value;
+        }
+        public bool ShouldSerializestat() => __pbn__stat != null;
+        public void Resetstat() => __pbn__stat = null;
+        private EDOTAMatchPlayerTimeCustomStat? __pbn__stat;
+
+        [global::ProtoBuf.ProtoMember(3)]
+        public float value
+        {
+            get => __pbn__value.GetValueOrDefault();
+            set => __pbn__value = value;
+        }
+        public bool ShouldSerializevalue() => __pbn__value != null;
+        public void Resetvalue() => __pbn__value = null;
+        private float? __pbn__value;
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
     public partial class CMatchPlayerTimedStats : global::ProtoBuf.IExtensible
     {
         private global::ProtoBuf.IExtension __pbn__extensionData;
@@ -1295,56 +1305,6 @@ namespace SteamKit2.GC.Dota.Internal
         public void Resetincome_gold() => __pbn__income_gold = null;
         private uint? __pbn__income_gold;
 
-        [global::ProtoBuf.ProtoMember(31)]
-        public uint custom_stats_1
-        {
-            get => __pbn__custom_stats_1.GetValueOrDefault();
-            set => __pbn__custom_stats_1 = value;
-        }
-        public bool ShouldSerializecustom_stats_1() => __pbn__custom_stats_1 != null;
-        public void Resetcustom_stats_1() => __pbn__custom_stats_1 = null;
-        private uint? __pbn__custom_stats_1;
-
-        [global::ProtoBuf.ProtoMember(32)]
-        public uint custom_stats_2
-        {
-            get => __pbn__custom_stats_2.GetValueOrDefault();
-            set => __pbn__custom_stats_2 = value;
-        }
-        public bool ShouldSerializecustom_stats_2() => __pbn__custom_stats_2 != null;
-        public void Resetcustom_stats_2() => __pbn__custom_stats_2 = null;
-        private uint? __pbn__custom_stats_2;
-
-        [global::ProtoBuf.ProtoMember(33)]
-        public uint custom_stats_3
-        {
-            get => __pbn__custom_stats_3.GetValueOrDefault();
-            set => __pbn__custom_stats_3 = value;
-        }
-        public bool ShouldSerializecustom_stats_3() => __pbn__custom_stats_3 != null;
-        public void Resetcustom_stats_3() => __pbn__custom_stats_3 = null;
-        private uint? __pbn__custom_stats_3;
-
-        [global::ProtoBuf.ProtoMember(34)]
-        public uint custom_stats_4
-        {
-            get => __pbn__custom_stats_4.GetValueOrDefault();
-            set => __pbn__custom_stats_4 = value;
-        }
-        public bool ShouldSerializecustom_stats_4() => __pbn__custom_stats_4 != null;
-        public void Resetcustom_stats_4() => __pbn__custom_stats_4 = null;
-        private uint? __pbn__custom_stats_4;
-
-        [global::ProtoBuf.ProtoMember(35)]
-        public uint custom_stats_5
-        {
-            get => __pbn__custom_stats_5.GetValueOrDefault();
-            set => __pbn__custom_stats_5 = value;
-        }
-        public bool ShouldSerializecustom_stats_5() => __pbn__custom_stats_5 != null;
-        public void Resetcustom_stats_5() => __pbn__custom_stats_5 = null;
-        private uint? __pbn__custom_stats_5;
-
         [global::ProtoBuf.ProtoMember(36)]
         public uint item_value
         {
@@ -1404,6 +1364,9 @@ namespace SteamKit2.GC.Dota.Internal
         public bool ShouldSerializerampages() => __pbn__rampages != null;
         public void Resetrampages() => __pbn__rampages = null;
         private uint? __pbn__rampages;
+
+        [global::ProtoBuf.ProtoMember(42)]
+        public global::System.Collections.Generic.List<CMatchPlayerTimedCustomStat> custom_stats { get; } = new global::System.Collections.Generic.List<CMatchPlayerTimedCustomStat>();
 
     }
 
@@ -8799,6 +8762,12 @@ namespace SteamKit2.GC.Dota.Internal
         [global::ProtoBuf.ProtoMember(6)]
         public global::System.Collections.Generic.List<CMsgGameDataSpecialValueBonus> bonuses { get; } = new global::System.Collections.Generic.List<CMsgGameDataSpecialValueBonus>();
 
+        [global::ProtoBuf.ProtoMember(7)]
+        public global::System.Collections.Generic.List<float> values_shard { get; } = new global::System.Collections.Generic.List<float>();
+
+        [global::ProtoBuf.ProtoMember(8)]
+        public global::System.Collections.Generic.List<float> values_scepter { get; } = new global::System.Collections.Generic.List<float>();
+
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -9001,6 +8970,9 @@ namespace SteamKit2.GC.Dota.Internal
 
         [global::ProtoBuf.ProtoMember(37)]
         public global::System.Collections.Generic.List<uint> gold_costs { get; } = new global::System.Collections.Generic.List<uint>();
+
+        [global::ProtoBuf.ProtoMember(38)]
+        public global::System.Collections.Generic.List<uint> health_costs { get; } = new global::System.Collections.Generic.List<uint>();
 
         [global::ProtoBuf.ProtoMember(40)]
         public global::System.Collections.Generic.List<CMsgGameDataSpecialValues> special_values { get; } = new global::System.Collections.Generic.List<CMsgGameDataSpecialValues>();
@@ -10219,6 +10191,133 @@ namespace SteamKit2.GC.Dota.Internal
     }
 
     [global::ProtoBuf.ProtoContract()]
+    public partial class CMsgMapStatsSnapshot : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        public uint timestamp
+        {
+            get => __pbn__timestamp.GetValueOrDefault();
+            set => __pbn__timestamp = value;
+        }
+        public bool ShouldSerializetimestamp() => __pbn__timestamp != null;
+        public void Resettimestamp() => __pbn__timestamp = null;
+        private uint? __pbn__timestamp;
+
+        [global::ProtoBuf.ProtoMember(2)]
+        public ulong famangos_gained
+        {
+            get => __pbn__famangos_gained.GetValueOrDefault();
+            set => __pbn__famangos_gained = value;
+        }
+        public bool ShouldSerializefamangos_gained() => __pbn__famangos_gained != null;
+        public void Resetfamangos_gained() => __pbn__famangos_gained = null;
+        private ulong? __pbn__famangos_gained;
+
+        [global::ProtoBuf.ProtoMember(3)]
+        public ulong wisdom_runes_gained
+        {
+            get => __pbn__wisdom_runes_gained.GetValueOrDefault();
+            set => __pbn__wisdom_runes_gained = value;
+        }
+        public bool ShouldSerializewisdom_runes_gained() => __pbn__wisdom_runes_gained != null;
+        public void Resetwisdom_runes_gained() => __pbn__wisdom_runes_gained = null;
+        private ulong? __pbn__wisdom_runes_gained;
+
+        [global::ProtoBuf.ProtoMember(4)]
+        public ulong roshan_kills_day
+        {
+            get => __pbn__roshan_kills_day.GetValueOrDefault();
+            set => __pbn__roshan_kills_day = value;
+        }
+        public bool ShouldSerializeroshan_kills_day() => __pbn__roshan_kills_day != null;
+        public void Resetroshan_kills_day() => __pbn__roshan_kills_day = null;
+        private ulong? __pbn__roshan_kills_day;
+
+        [global::ProtoBuf.ProtoMember(5)]
+        public ulong roshan_kills_night
+        {
+            get => __pbn__roshan_kills_night.GetValueOrDefault();
+            set => __pbn__roshan_kills_night = value;
+        }
+        public bool ShouldSerializeroshan_kills_night() => __pbn__roshan_kills_night != null;
+        public void Resetroshan_kills_night() => __pbn__roshan_kills_night = null;
+        private ulong? __pbn__roshan_kills_night;
+
+        [global::ProtoBuf.ProtoMember(6)]
+        public ulong portals_used
+        {
+            get => __pbn__portals_used.GetValueOrDefault();
+            set => __pbn__portals_used = value;
+        }
+        public bool ShouldSerializeportals_used() => __pbn__portals_used != null;
+        public void Resetportals_used() => __pbn__portals_used = null;
+        private ulong? __pbn__portals_used;
+
+        [global::ProtoBuf.ProtoMember(7)]
+        public ulong lanterns_lit
+        {
+            get => __pbn__lanterns_lit.GetValueOrDefault();
+            set => __pbn__lanterns_lit = value;
+        }
+        public bool ShouldSerializelanterns_lit() => __pbn__lanterns_lit != null;
+        public void Resetlanterns_lit() => __pbn__lanterns_lit = null;
+        private ulong? __pbn__lanterns_lit;
+
+        [global::ProtoBuf.ProtoMember(8)]
+        public ulong miniboss_kills
+        {
+            get => __pbn__miniboss_kills.GetValueOrDefault();
+            set => __pbn__miniboss_kills = value;
+        }
+        public bool ShouldSerializeminiboss_kills() => __pbn__miniboss_kills != null;
+        public void Resetminiboss_kills() => __pbn__miniboss_kills = null;
+        private ulong? __pbn__miniboss_kills;
+
+        [global::ProtoBuf.ProtoMember(9)]
+        public ulong outposts_captured
+        {
+            get => __pbn__outposts_captured.GetValueOrDefault();
+            set => __pbn__outposts_captured = value;
+        }
+        public bool ShouldSerializeoutposts_captured() => __pbn__outposts_captured != null;
+        public void Resetoutposts_captured() => __pbn__outposts_captured = null;
+        private ulong? __pbn__outposts_captured;
+
+        [global::ProtoBuf.ProtoMember(10)]
+        public ulong shield_runes_gained
+        {
+            get => __pbn__shield_runes_gained.GetValueOrDefault();
+            set => __pbn__shield_runes_gained = value;
+        }
+        public bool ShouldSerializeshield_runes_gained() => __pbn__shield_runes_gained != null;
+        public void Resetshield_runes_gained() => __pbn__shield_runes_gained = null;
+        private ulong? __pbn__shield_runes_gained;
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class CMsgGlobalMapStats : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        public CMsgMapStatsSnapshot current { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2)]
+        public CMsgMapStatsSnapshot window_start { get; set; }
+
+        [global::ProtoBuf.ProtoMember(3)]
+        public CMsgMapStatsSnapshot window_end { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
     public enum ESpecialPingValue
     {
         k_ESpecialPingValue_NoData = 16382,
@@ -10242,6 +10341,14 @@ namespace SteamKit2.GC.Dota.Internal
         k_EDOTAGCSessionNeed_GameServerIdle = 202,
         k_EDOTAGCSessionNeed_GameServerRelay = 203,
         k_EDOTAGCSessionNeed_GameServerLocalUpload = 204,
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public enum EDOTAMatchPlayerTimeCustomStat
+    {
+        k_EDOTA_MatchPlayerTimeCustomStat_HPRegenUnderT1Towers = 1,
+        k_EDOTA_MatchPlayerTimeCustomStat_MagicDamageReducedWithNewFormula_Absolute = 2,
+        k_EDOTA_MatchPlayerTimeCustomStat_MagicDamageReducedWithNewFormula_PercentOfTotalHP = 3,
     }
 
     [global::ProtoBuf.ProtoContract()]

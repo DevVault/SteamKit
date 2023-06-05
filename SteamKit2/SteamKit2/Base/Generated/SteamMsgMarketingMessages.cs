@@ -636,6 +636,28 @@ namespace SteamKit2.Internal
         public void Resetgid() => __pbn__gid = null;
         private ulong? __pbn__gid;
 
+        [global::ProtoBuf.ProtoMember(2)]
+        [global::System.ComponentModel.DefaultValue(0u)]
+        public uint display_index
+        {
+            get => __pbn__display_index ?? 0u;
+            set => __pbn__display_index = value;
+        }
+        public bool ShouldSerializedisplay_index() => __pbn__display_index != null;
+        public void Resetdisplay_index() => __pbn__display_index = null;
+        private uint? __pbn__display_index;
+
+        [global::ProtoBuf.ProtoMember(3)]
+        [global::System.ComponentModel.DefaultValue(EMarketingMessageTemplateType.k_EMarketingMessageTemplate_Unknown)]
+        public EMarketingMessageTemplateType template_type
+        {
+            get => __pbn__template_type ?? EMarketingMessageTemplateType.k_EMarketingMessageTemplate_Unknown;
+            set => __pbn__template_type = value;
+        }
+        public bool ShouldSerializetemplate_type() => __pbn__template_type != null;
+        public void Resettemplate_type() => __pbn__template_type = null;
+        private EMarketingMessageTemplateType? __pbn__template_type;
+
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -859,6 +881,8 @@ namespace SteamKit2.Internal
         k_EMarketingMessageDemoQuit = 7,
         k_EMarketingMessageGifting = 8,
         k_EMarketingMessageEJsKorner = 9,
+        k_EMarketingMessageUpdate = 10,
+        k_EMarketingMessageMidweekDeal = 11,
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -877,6 +901,18 @@ namespace SteamKit2.Internal
         k_EMarketingMessagePublisherAssociation = 3,
         k_EMarketingMessageGenreAssociation = 4,
         k_EMarketingMessageBundleAssociation = 5,
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public enum EMarketingMessageTemplateType
+    {
+        k_EMarketingMessageTemplate_Unknown = 0,
+        k_EMarketingMessageTemplate_Image = 1,
+        k_EMarketingMessageTemplate_Animated = 2,
+        k_EMarketingMessageTemplate_Featured_Video = 3,
+        k_EMarketingMessageTemplate_DLC_Override = 4,
+        k_EMarketingMessageTemplate_Replay = 5,
+        k_EMarketingMessageTemplate_MAX = 6,
     }
 
     [global::ProtoBuf.ProtoContract()]

@@ -1883,6 +1883,16 @@ namespace SteamKit2.Internal
         public void Resetappid() => __pbn__appid = null;
         private uint? __pbn__appid;
 
+        [global::ProtoBuf.ProtoMember(3)]
+        public uint shortcutid
+        {
+            get => __pbn__shortcutid.GetValueOrDefault();
+            set => __pbn__shortcutid = value;
+        }
+        public bool ShouldSerializeshortcutid() => __pbn__shortcutid != null;
+        public void Resetshortcutid() => __pbn__shortcutid = null;
+        private uint? __pbn__shortcutid;
+
         [global::ProtoBuf.ProtoMember(4)]
         [global::System.ComponentModel.DefaultValue(1u)]
         public uint page
@@ -3941,10 +3951,10 @@ namespace SteamKit2.Internal
                 => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
             [global::ProtoBuf.ProtoMember(1)]
-            [global::System.ComponentModel.DefaultValue(EContentDescriptorID.k_EContentDescriptor_FrequentNudityOrSexualContent)]
+            [global::System.ComponentModel.DefaultValue(EContentDescriptorID.k_EContentDescriptor_NudityOrSexualContent)]
             public EContentDescriptorID descriptorid
             {
-                get => __pbn__descriptorid ?? EContentDescriptorID.k_EContentDescriptor_FrequentNudityOrSexualContent;
+                get => __pbn__descriptorid ?? EContentDescriptorID.k_EContentDescriptor_NudityOrSexualContent;
                 set => __pbn__descriptorid = value;
             }
             public bool ShouldSerializedescriptorid() => __pbn__descriptorid != null;

@@ -3401,6 +3401,9 @@ namespace SteamKit2.Internal
         [global::ProtoBuf.ProtoMember(1)]
         public CPlayer_CommunityPreferences preferences { get; set; }
 
+        [global::ProtoBuf.ProtoMember(2)]
+        public UserContentDescriptorPreferences content_descriptor_preferences { get; set; }
+
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -3999,6 +4002,9 @@ namespace SteamKit2.Internal
 
         [global::ProtoBuf.ProtoMember(1)]
         public CPlayer_CommunityPreferences preferences { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2)]
+        public UserContentDescriptorPreferences content_descriptor_preferences { get; set; }
 
     }
 
